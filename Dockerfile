@@ -18,6 +18,4 @@ RUN apt-get update && \
 # Install elasticdump
 RUN npm install -g elasticdump
 
-ENTRYPOINT /usr/bin/elasticdump
-
-CMD ["--input=http://elasticsearch:9200/logstash*","--output=$"]
+CMD /usr/bin/elasticdump --input="http://elasticsearch:9200/logstash* --output=$"

@@ -18,7 +18,7 @@ docker run \
   -it \
   --rm \
   --net=demo_sitch_elk \
-  extractor | gzip > ./sitch_logs.json
+  extractor | gzip > ./sitch_logs.json.gz
 ```
 
 Run with options, output to stdout:
@@ -28,8 +28,9 @@ docker run \
   --rm \
   --net=demo_sitch_elk \
   extractor \
-  --input=http://elasticsearch:9200/logstash* \
-  --output=$
+    /usr/bin/elasticdump \
+    --input=http://elasticsearch:9200/logstash* \
+    --output=$
 ```
 
 Note the use of `--net=demo_sitch_elk` in the commands above.  This is
